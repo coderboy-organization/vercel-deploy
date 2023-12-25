@@ -1,13 +1,15 @@
-import express from "express";
+import express, { Request, Response } from "express";
 
 const app = express();
 app.use(express.json());
 
-app.get("/post", (req, res) => {
+// get post routes
+app.get("/post", (req: Request, res:Response) => {
   res.status(200).json({ message: "post routes" });
 });
 
-app.get("/", (req, res) => {
+// root routes
+app.get("/", (req: Request, res:Response) => {
   res.status(200).json({ message: "Hello World" });
 });
 export default app;
